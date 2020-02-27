@@ -11,6 +11,8 @@ public class SlowTest {
 
     @BeforeAll
     void prepareTestDatabase() {
+        neo4j = Neo4jBuilders.newInProcessBuilder().build();
+        neo4j.close();
         long startTime = System.nanoTime();
         neo4j = Neo4jBuilders.newInProcessBuilder().build();
         report("startup",startTime);
