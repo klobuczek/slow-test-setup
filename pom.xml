@@ -23,7 +23,7 @@
             <version>${neo4j-version}</version>
             <scope>test</scope>
         </dependency>
-        <!--apoc +2 sec start, +10 sec shutdown-->
+        <!--apoc +1 sec start, +1 sec shutdown-->
 <!--        <dependency>-->
 <!--            <groupId>org.neo4j.procedure</groupId>-->
 <!--            <artifactId>apoc</artifactId>-->
