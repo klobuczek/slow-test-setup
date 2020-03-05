@@ -2,6 +2,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.neo4j.configuration.connectors.BoltConnector;
 import org.neo4j.harness.Neo4j;
 import org.neo4j.harness.Neo4jBuilders;
 
@@ -11,11 +12,15 @@ public class SlowTest {
 
     @BeforeAll
     void prepareTestDatabase() {
-        neo4j = Neo4jBuilders.newInProcessBuilder().build();
+        neo4j = getNeo4j();
         neo4j.close();
         long startTime = System.nanoTime();
-        neo4j = Neo4jBuilders.newInProcessBuilder().build();
+        neo4j = getNeo4j();
         report("startup",startTime);
+    }
+
+    private Neo4j getNeo4j() {
+        return Neo4jBuilders.newInProcessBuilder().withConfig(BoltConnector.enabled, false).build();
     }
 
     @AfterAll
