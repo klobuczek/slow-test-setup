@@ -8,8 +8,7 @@
     <artifactId>slow-test-setup</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <neo4j-version>4.0.1</neo4j-version>
-        <apoc-version>4.0.0.2</apoc-version>
+        <neo4j-version>4.1.2</neo4j-version>
         <maven-surefire-plugin-version>2.22.2</maven-surefire-plugin-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -23,26 +22,11 @@
             <version>${neo4j-version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- apoc does not increase the times anymore -->
-<!--        <dependency>-->
-<!--            <groupId>org.neo4j.procedure</groupId>-->
-<!--            <artifactId>apoc</artifactId>-->
-<!--            <version>${apoc-version}</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.neo4j</groupId>-->
-<!--            <artifactId>neo4j-kernel</artifactId>-->
-<!--            <version>${neo4j-version}</version>-->
-<!--            <type>test-jar</type>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.commons</groupId>-->
-<!--            <artifactId>commons-text</artifactId>-->
-<!--            <version>1.7</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.neo4j.driver</groupId>
+            <artifactId>neo4j-java-driver</artifactId>
+            <version>4.1.1</version>
+        </dependency>
     </dependencies>
 
     <build>
